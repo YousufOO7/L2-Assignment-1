@@ -19,14 +19,8 @@ function formatString(input: string, toUpper?: boolean): string {
   
 
   function concatenateArrays<T>(...arrays: T[][]): T[] {
-    let result: T[] = [];
-  
-    for (let array of arrays) {
-      result = result.concat(array);
-    }
-    return result;
+    return [...arrays].reduce((acc, curr) => [...curr, ...acc], [])
   }
-
 
 
 
@@ -87,17 +81,8 @@ function formatString(input: string, toUpper?: boolean): string {
       return null;
     }
   
-    let expensive = products[0];
-  
-    for (const product of products) {
-      if (product.price > expensive.price) {
-        expensive = product;
-      }
-    }
-    return expensive;
+    return [...products].reduce((max, product) => product.price > max.price ? product : max)
   }
-  
-  
 
 
 
