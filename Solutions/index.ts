@@ -51,7 +51,6 @@ function formatString(input: string, toUpper?: boolean): string {
      return console.log(`Model: ${this.model}`);
     }
   }
-  const myCar = new Car("Toyota", 2020, "Corolla");
   
   
 
