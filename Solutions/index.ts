@@ -56,16 +56,14 @@ function formatString(input: string, toUpper?: boolean): string {
 
 
 
-  function processValue(value: string | number): string | number | undefined {
+  function processValue(value: string | number): number  {
     if (typeof value === "string") {
       return value.length;
     }
-    if (typeof value === "number") {
+    else {
       return value * 2;
     }
   }
-
-  
 
 
 
